@@ -20,7 +20,10 @@ function Contacts() {
 
   return (
     <div className='contacts__container'>
-      {contactsList}
+      <h2>Contacts</h2>
+      <div className='contacts__list'>
+        {contactsList}
+      </div>
     </div>
   )
 }

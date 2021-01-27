@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.app__container {
+  max-width: 23.75rem;
+  margin: 3rem auto 0;
+  border-radius: 10px;
+  background-color: #075E54;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__container-inner {
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  padding: 1rem 0 0 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  padding-left: 1rem;
+}
+
+.contacts__item-inner {
+  padding: 1rem;
+  border-bottom: 1px solid gray;
+}
+
+.contacts__list {
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.chat__window {
+  height: 12rem;
+  padding: 0.5rem;
+  overflow: auto;
+  background-color: #ECE5DD;
+  color: #000;
+}
+
+.chat__bubble-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+.chat__bubble {
+  max-width: 70%;
+  margin-bottom: 0.32rem;
+  padding: .25rem 1rem;
+  border-radius: 10px;
+  background-color: #DCF8C6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  padding: 0.5rem;
+}
+
+.text-input {
+  width: 80%;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.submit-btn {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #25D366;
+  color: #fff;
+}
+
+.back-btn {
+  position: absolute;
+  top: -3rem;
+  right: 1rem;
+  color: #fff;
 }

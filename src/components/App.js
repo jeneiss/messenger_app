@@ -11,6 +11,7 @@ function App() {
   return (
     <Router>
       <div className='app__container'>
+        <h1>WhosApp</h1>
         <div className='app__container-inner'>
           <Route
             path='/' exact

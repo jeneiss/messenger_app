@@ -36,17 +36,40 @@ function Chat({ chat, setChat }) {
   return (
     <div className='chat__container'>
       <Link
+        className='back-btn'
         to='/'
       >
         Back
       </Link>
       <h2>{contact}</h2>
       <div className='chat__window'>
-        {chat[contact] && chat[contact].map((chat, index) => <div key={index} className='chat__bubble'>{chat}</div>)}
+        {chat[contact] && chat[contact].map((chat, index) => {
+          return (
+            <div
+              className='chat__bubble-container'
+              key={index}
+            >
+              <div
+                className='chat__bubble'
+              >
+                {chat}
+              </div>
+            </div>
+          )
+        })}
       </div>
       <form onSubmit={handleSubmit}>
-        <input type='text' value={value} onChange={handleChange} />
-        <input type='submit' value='Submit' />
+        <input
+          className='text-input'
+          type='text'
+          value={value}
+          onChange={handleChange}
+        />
+        <input
+          type='submit'
+          value='Submit'
+          className='submit-btn'
+        />
       </form>
     </div>
   )
