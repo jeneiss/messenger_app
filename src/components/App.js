@@ -3,6 +3,7 @@ import React from 'react'
 
 import './App.css'
 import Contacts from './Contacts'
+import Chat from './Chat'
 
 function App() {
   return (
@@ -12,6 +13,10 @@ function App() {
           <Route
             path='/' exact
             component={Contacts}
+          />
+          <Route
+            path='/chat'
+            component={Chat}
           />
         </div>
       </div>
