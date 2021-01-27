@@ -25,13 +25,14 @@ function Chat() {
       setChat(prevState => (
         {
           ...prevState,
-          [contact]: value
+          [contact]: [value]
         }
       ))
     }
 
     setValue('')
     e.preventDefault()
+    console.log(chat)
   }
 
   return (
@@ -43,7 +44,7 @@ function Chat() {
       </Link>
       <h2>{contact}</h2>
       <div className='chat__window'>
-        {chat[contact]}
+        {chat[contact] && chat[contact].map((chat, index) => <div key={index} className='chat__bubble'>{chat}</div>)}
       </div>
       <form onSubmit={handleSubmit}>
         <input type='text' value={value} onChange={handleChange} />
