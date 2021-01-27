@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import React from 'react'
+import React, { useState } from 'react'
 
 import './App.css'
 import Contacts from './Contacts'
 import Chat from './Chat'
 
 function App() {
+  const [chat, setChat] = useState({})
+
   return (
     <Router>
       <div className='app__container'>
@@ -16,7 +18,7 @@ function App() {
           />
           <Route
             path='/chat'
-            component={Chat}
+            component={() => <Chat chat={chat} setChat={setChat} />}
           />
         </div>
       </div>

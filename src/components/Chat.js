@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import queryString from 'query-string'
 
-function Chat() {
-  const [chat, setChat] = useState({})
+function Chat({ chat, setChat }) {
   const [value, setValue] = useState('')
 
   // eslint-disable-next-line no-restricted-globals
@@ -32,7 +31,6 @@ function Chat() {
 
     setValue('')
     e.preventDefault()
-    console.log(chat)
   }
 
   return (
