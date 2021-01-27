@@ -1,13 +1,21 @@
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import React from 'react'
+
 import './App.css'
+import Contacts from './Contacts'
 
 function App() {
   return (
-    <div className='app__container'>
-      <div className='app__container-inner'>
-        {/* Route to contacts list
-        Route to chat window/input */}
+    <Router>
+      <div className='app__container'>
+        <div className='app__container-inner'>
+          <Route
+            path='/' exact
+            component={Contacts}
+          />
+        </div>
       </div>
-    </div>
+    </Router>
   )
 }
 
