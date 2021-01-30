@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import './App.css'
 import Contacts from './Contacts'
 import Chat from './Chat'
+import { DraftMessageProvider, DraftMessageConsumer } from './DraftMessageContext'
 
 function App() {
   const [chat, setChat] = useState({})
@@ -17,10 +18,23 @@ function App() {
             path='/' exact
             component={Contacts}
           />
-          <Route
-            path='/chat'
-            component={() => <Chat chat={chat} setChat={setChat} />}
-          />
+          <DraftMessageProvider>
+            <Route
+              path='/chat'
+              component={() => (
+                <DraftMessageConsumer>
+                  {context => (
+                    <Chat
+                      chat={chat}
+                      setChat={setChat}
+                      draft={context.draft}
+                      setDraft={context.setDraft}
+                    />
+                  )}
+                </DraftMessageConsumer>
+              )}
+            />
+          </DraftMessageProvider>
         </div>
       </div>
     </Router>

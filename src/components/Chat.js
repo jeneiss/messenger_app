@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import queryString from 'query-string'
 
-function Chat({ chat, setChat }) {
-  const [value, setValue] = useState('')
-
+function Chat({ chat, setChat, draft, setDraft }) {
   // eslint-disable-next-line no-restricted-globals
   const contact = queryString.parse(location.search).contact
+  const [value, setValue] = useState(draft[contact])
 
   const handleChange = (e) => {
     setValue(e.target.value)
@@ -32,8 +31,16 @@ function Chat({ chat, setChat }) {
     }
 
     setValue('')
+    setDraft('')
     e.preventDefault()
   }
+
+  useEffect(() => {
+    return () => {
+      setDraft(prevState => ({...prevState, [contact]: value}))
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value])
 
   return (
     <div className='chat__container'>
