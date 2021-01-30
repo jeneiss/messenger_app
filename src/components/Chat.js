@@ -13,20 +13,22 @@ function Chat({ chat, setChat }) {
   }
 
   const handleSubmit = (e) => {
-    if (chat[contact]) {
-      setChat(prevState => (
-        {
-          ...prevState,
-          [contact]: prevState[contact].concat(value)
-        }
-      ))
-    } else {
-      setChat(prevState => (
-        {
-          ...prevState,
-          [contact]: [value]
-        }
-      ))
+    if (value.trim() !== '') {
+      if (chat[contact]) {
+        setChat(prevState => (
+          {
+            ...prevState,
+            [contact]: prevState[contact].concat(value)
+          }
+        ))
+      } else {
+        setChat(prevState => (
+          {
+            ...prevState,
+            [contact]: [value]
+          }
+        ))
+      }
     }
 
     setValue('')
